@@ -30,7 +30,7 @@ changeData.forEach(value => {
 });
 
 async function getData(inputData) {
-    let itemHtml;
+    let itemHtml = '';
     const getCars = await fetch('https://api-car-rental.binaracademy.org/customer/car');
     const result = await getCars.json();
 
@@ -43,11 +43,19 @@ async function getData(inputData) {
 
     resultData.forEach(element => {
         itemHtml += `
-            <div class="col-4 text-center">
-                <div class="card">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
                     <img class="img-fluid card-img-top" src="${element.image}" />
-                    <div class="card-body">
-                        <h3 class="card-text">${element.name}</h3>
+                    <div class="card-body d-flex justify-content-end flex-column mb-3">
+                        <h4 class="card-text text-medium">${element.name}</h4>
+                        <h3 class="card-text">RP ${element.price.toLocaleString()} / hari</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul class="align-top">
+                            <li id="orang">${element.capacity} orang</li>
+                            <li id="transmisi">Manual</li>
+                            <li id="tahun">Tahun 2000</li>
+                        </ul>
+                        <a href="#" class="btn btn-success mt-auto w-100 align-self-center">Pilih Mobil</a>
                     </div>
                 </div>
             </div>
@@ -55,5 +63,5 @@ async function getData(inputData) {
     })
     document.getElementById('searchresult').innerHTML = itemHtml;
 
-    console.log(itemHtml)
+    console.log(resultData)
 }

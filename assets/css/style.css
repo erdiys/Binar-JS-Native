@@ -60,6 +60,29 @@ h2 {
 }
 /* end styling untuk section our-service */
 
+#searchresult ul {
+  list-style: none;
+}
+
+#searchresult li {
+  padding-bottom: 1em;
+}
+
+#searchresult li#orang:before {
+  content: url(../img/fi_users.svg);
+  padding-right: 1em;
+}
+
+#searchresult li#transmisi:before {
+  content: url(../img/fi_settings.svg);
+  padding-right: 1em;
+}
+
+#searchresult li#tahun:before {
+  content: url(../img/fi_calendar.svg);
+  padding-right: 1em;
+}
+
 /* start styling untuk section why-us */
 #why-us h3 {
   font-size: 1.1rem;
